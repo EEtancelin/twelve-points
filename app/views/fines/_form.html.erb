@@ -11,14 +11,14 @@
     <option value="3">Other</option>
   </select>
 
-  <%=f.input :fine_type, collection: 1..6 %>
+  <%=f.input :reason, collection: 1..6 %>
 
   <%= f.input :price, label: 'Your price please', error: 'Price is mandatory, please specify one' %>
 
-  <%= f.input :date, label: 'Limit Date please', error: 'Limit Date is mandatory, please specify one' %>
+  <%= f.input :fine_deadline, label: 'Limit Date please', error: 'Limit Date is mandatory, please specify one' %>
 
   <h3>Votre offre</h3>
-  <%= f.input :priceoffer, label: 'Offer please', error: 'Offer is mandatory, please specify one' %>
+  <%= f.input :fine_offer, label: 'Offer please', error: 'Offer is mandatory, please specify one' %>
    <%= f.input :comment, label: 'Comment please' %>
   <%= f.submit "Publish a fine", class: "btn btn-primary" %>
 <% end %>
