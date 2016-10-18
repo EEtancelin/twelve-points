@@ -1,4 +1,4 @@
 class Fine < ApplicationRecord
-  belongs_to :offer
+  has_many :offer , dependent: :destroy
   belongs_to :user
 end
