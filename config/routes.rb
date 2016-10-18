@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  ressources :offers, only: [:index,:new, :create, :update] do
-    ressources : :fines , only: [:index, :new, :create, :show, :edit, :update, :destroy]
+    resources :fines , only: [:new, :create, :show,
+                              :edit, :update, :destroy] do
+      resources :offers, only: [:index,:new, :create, :update]
   end
 
 
