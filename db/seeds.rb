@@ -21,25 +21,25 @@ Offer.all.destroy_all
 
 User.create!(email: "test@test.com", password:"testest")
 
-# 20.times do
-#   Fine.create!(
-#               fine_date: Time.at((Time.now.to_f) - rand(3456000)),
-#               fine_deadline: Time.at((Time.now.to_f) + rand(3456000)),
-#               point: arr_lost_points.sample,
-#               price: fines_price.sample,
-#               reason: reason.sample,
-#               user_id: User.all.sample.id,
-#               last_name: Faker::Name.last_name,
-#               first_name: Faker::Name.first_name,
-#               fine_offer: 100 + rand(1000))
-# end
+20.times do
+  Fine.create!(
+              fine_date: Time.at((Time.now.to_f) - rand(3456000)),
+              fine_deadline: Time.at((Time.now.to_f) + rand(3456000)),
+              point: arr_lost_points.sample,
+              price: fines_price.sample,
+              reason: reason.sample,
+              user_id: User.all.sample.id,
+              last_name: Faker::Name.last_name,
+              first_name: Faker::Name.first_name,
+              fine_offer: 100 + rand(1000))
+end
 
-# fines = Fine.all
-# users = User.all
+fines = Fine.all
+users = User.all
 
-# 20.times do
-#   Offer.create!(
-#               status: offer_statut.sample,
-#               fine_id: fines.sample.id,
-#               user_id: users.sample.id)
-# end
+20.times do
+  Offer.create!(
+              status: offer_statut.sample,
+              fine_id: fines.sample.id,
+              user_id: users.sample.id)
+end
