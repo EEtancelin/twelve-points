@@ -30,7 +30,8 @@ User.create!(email: "test@test.com", password:"testest")
               reason: reason.sample,
               user_id: User.all.sample.id,
               last_name: Faker::Name.last_name,
-              first_name: Faker::Name.first_name)
+              first_name: Faker::Name.first_name,
+              fine_offer: 100 + rand(1000))
 end
 
 fines = Fine.all
