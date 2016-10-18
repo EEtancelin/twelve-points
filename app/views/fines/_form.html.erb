@@ -1,24 +1,32 @@
-<h2>Informations</h2>
-<%= simple_form_for(@fine) do |f| %>
+<div class="container">
+  <div class="class text-center">
+    <h1>Enregistrez votre amende</h1@>
+  <h3>Votre amende ne sera bientot qu'un lointain souvenir....</h3>
+  </div>
 
-  <%= f.input :last_name, label: 'Your lastname please', error: 'Lastname is mandatory, please specify one' %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <h2>Informations</h2>
+    <%= simple_form_for(@fine) do |f| %>
 
-  <%= f.input :first_name, label: 'Your firstrname please', error: 'Lastname is mandatory, please specify one' %>
+      <%= f.input :last_name, label: 'Your lastname please', error: 'Lastname is mandatory, please specify one' %>
 
-  <select class="form-control">
-    <option value="1">Traffic Light</option>
-    <option value="2">Overspeed</option>
-    <option value="3">Other</option>
-  </select>
+      <%= f.input :first_name, label: 'Your firstrname please', error: 'Lastname is mandatory, please specify one' %>
 
-  <%=f.input :reason, collection: 1..6 %>
+      <%=f.input :reason, collection: ["Traffic Light", "Overspeed", "Other" ] %>
 
-  <%= f.input :price, label: 'Your price please', error: 'Price is mandatory, please specify one' %>
+      <%=f.input :point, collection: 1..6 %>
 
-  <%= f.input :fine_deadline, label: 'Limit Date please', error: 'Limit Date is mandatory, please specify one' %>
+      <%= f.input :price, label: 'Your price please', error: 'Price is mandatory, please specify one' %>
 
-  <h3>Votre offre</h3>
-  <%= f.input :fine_offer, label: 'Offer please', error: 'Offer is mandatory, please specify one' %>
-   <%= f.input :comment, label: 'Comment please' %>
-  <%= f.submit "Publish a fine", class: "btn btn-primary" %>
-<% end %>
+      <%= f.input :fine_deadline, label: 'Limit Date please', error: 'Limit Date is mandatory, please specify one' %>
+      </div>
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <h3>Votre offre</h3>
+    <%= f.input :fine_offer, label: 'Offer please', error: 'Offer is mandatory, please specify one' %>
+     <%= f.input :comment, label: 'Comment please' %>
+    <%= f.submit "Publish a fine", class: "btn btn-large btn-block btn-primary full-width" %>
+  <% end %>
+  </div>
+</div>
+</div>
