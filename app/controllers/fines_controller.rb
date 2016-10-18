@@ -1,5 +1,6 @@
 class FinesController < ApplicationController
   def new
+  @fine=Fine.new
   end
 
   def create
