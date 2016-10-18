@@ -1,0 +1,47 @@
+.social-login{
+  position:relative;
+  float: left;
+  width: 100%;
+  height:auto;
+  padding: 10px 0 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.social-login a{
+  position:relative;
+  float: left;
+  width:calc(46% - 8px);
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(0,0,0,0.05);
+  padding: 12px;
+  border-radius: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 0 3%;
+  text-align:center;
+}
+
+.social-login a i{
+  position: relative;
+  float: left;
+  width: 20px;
+  top: 2px;
+}
+
+.social-login a:first-child{
+  background-color: #49639F;
+}
+
+.social-login a:last-child{
+  background-color: #DF4A32;
+}
+
+.forgot-password {
+  font-size: 12px;
+  color: gray;
+}
+
+.sign-up {
+  font-size: 14px;
+}
