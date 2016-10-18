@@ -1,6 +1,7 @@
 class FinesController < ApplicationController
   def new
-  @fine=Fine.new
+    @fine = Fine.new
+    @user=User.new
   end
 
   def create
@@ -20,4 +21,16 @@ class FinesController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def set_fine
+    @fine = Fine.find(params[:id])
+  end
+
+  def fine_params
+    params.require(:fine).permit(:lastname, :price)
+  end
+
 end
+

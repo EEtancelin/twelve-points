@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+#Create fine seed
+Faker::Config.locale = 'fr'
+
+arr_lost_points = [1,2,3,4,6]
+fines_price = [20,45,160,180]
+reason = ["Alcoolémie","Excés de vitesse", "Refus de priorité"]
+
+20.times do
+  Fine.create(
+              fine_date: Time.at((Time.now.to_f) - rand(3456000)),
+              fine_deadline: Time.at((Time.now.to_f) + rand(3456000)),
+              point: arr_lost_points.sample,
+              price: fines_price.sample,
+              reason: reason.sample,
+              user_id: User.all.sample,
+              last_name: Faker::Name.last_name,
+              first_name: Faker::Name.first_name)
+
+end
