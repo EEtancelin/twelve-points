@@ -2,7 +2,9 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
-
+.homepage {
+  background-color: #ffffff;
+}
 
 // VALUE PROP
 
@@ -10,7 +12,6 @@
   display: flex;
   justify-content: center;
   align-items: stretch;
-  margin-top: 20px;
 }
 .value-prop .feature {
   padding: 20px 30px;
@@ -33,6 +34,10 @@
   font-size: 14px;
 }
 
+#key-features {
+  background-color: #ffffff;
+}
+
 #key-features ul li {
   text-align: left;
   color: #757c84;
@@ -43,3 +48,5 @@
   font-weight: 300;
   position: relative;
 }
+
+
