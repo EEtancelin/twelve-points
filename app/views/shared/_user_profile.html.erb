@@ -8,8 +8,8 @@
 </div>
 
 <div id="fine" class="tab-content" >
-  <p>Content for Tab 1</p>
+  <%= render partial: "fines/card", collection: @fines, as: :fine %>
 </div>
 <div id="offer" class="tab-content">
-  <p>Content for Tab 2</p>
+  <%= render partial: "fines/card", collection: @fines, as: :fine %>
 </div>
