@@ -11,5 +11,8 @@
   <%= render partial: "fines/card", collection: @fines, as: :fine %>
 </div>
 <div id="offer" class="tab-content">
-  <%= render partial: "fines/card", collection: @fines, as: :fine %>
+  <%#= render partial: "fines/card", collection: @offers, as: :fine %>
 </div>
+
+<p>offer <%= @offers.length%></p>
+<p>fine <%= @fines.length%></p>
