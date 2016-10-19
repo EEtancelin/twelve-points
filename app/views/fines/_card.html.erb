@@ -19,7 +19,13 @@
         <!-- bit of a bio; who are you? -->
         <div class="profile-bio">
 
-          <p> J'ai une amende de <b><%=fine.price%>€</b> avec <b><%=fine.point%> points</b>. Aidez moi avant le <%=fine.fine_deadline.to_formatted_s(:short) %> </p>
+          <p> J'ai une amende de <b><%=fine.price%>€</b> avec <b><%=fine.point%>
+            <% if fine.point == 1%>
+              <%="point"%>
+              <% else%>
+              <%="points"%>
+              <% end %>
+            </b>. Aidez moi avant le <%=fine.fine_deadline.to_formatted_s(:short) %> </p>
 
         </div>
 
