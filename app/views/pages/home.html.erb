@@ -1,11 +1,39 @@
-<div class="banner" style="background-image: url(<%= asset_path('image_banner.jpg') %>);">
-  <div class="banner-content">
-    <p>Avec,</p>
-    <h1>Twelve-Points</h1>
-    <p>Laissez Papy Mougeot prendre en charge votre amende....</p>
-     <%= link_to t(".top_call_to_action", default: "Enregistrez votre amende"), new_fine_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
 
+<div class="homepage">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= asset_path('image_banner.jpg') %>);">
+    <div class="banner-contents">
+        <h1>Twelve-Points</h1>
+        <p>Laissez Papy Mougeot prendre en charge votre amende....</p>
+        <a class="btn btn-primary btn-lg">Postez votre amende</a>
+    </div>
   </div>
+
+  <section id="key-features">
+    <div class="grid value-prop">
+        <div class="row">
+          <div class="feature col-xs-12 col-sm-6">
+            <ul>
+              <h3>Papy Mougeot</h3>
+              <li class="icon-tool-magnifier"><i class="fa fa-search"></i>Consultez toutes les annonces depuis le moteur de recherche. Trouvez une amende à prendre en charge partout en France.</li>
+              <li class="icon-com-bubble-line"><i class="fa fa-comment"></i>Contactez gratuitement les propriétaires des amendes et posez leur toutes vos questions pratiques concernant l'amende et ses détails via notre messagerie intégrée.</li>
+              <li class="icon-interface-circle-tick-a"><i class="fa fa-check-circle"></i> Réservez directement en ligne de manière sécurisée et prenez en charge l'amende de vos rêves en quelques clics. Vous ne serez crédité qu’en cas d’acceptation de votre demande par le propriétaire de l'amende. Paiement 100% sécurisé. TwelvePoints est votre tiers de confiance.</li>
+            </ul>
+          </div>
+
+          <div class="feature col-xs-12 col-sm-6">
+            <ul>
+              <h3>Pilote</h3>
+              <li class="icon-tool-magnifier"><i class="fa fa-newspaper-o"></i>Créez gratuitement une annonce pour la location de votre amende à d’autres particuliers. Excès de vitesse ou feu rouge grillé, ils sont tous les bienvenus sur TwelvePoints !</li>
+              <li class="icon-com-bubble-line"><i class="fa fa-shield"></i>Vendez votre amende à qui vous voulez, quand vous voulez et au prix que vous voulez. TwelvePoints vous permet de ne pas perdre votre permis et ainsi garder sa liberté de circulation.</li>
+              <li class="icon-interface-circle-tick-a"><i class="fa fa-lock"></i>  Assurance tous risques en option jusqu’à 1000€ de couverture et dépôt de caution sécurisé. Confiez-nous la vente de votre amende.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <%= render partial: "fines/card", collection: @fines, as: :fine %>
+
 </div>
 
-<%= render partial: "fines/card", collection: @fines, as: :fine %>
+
