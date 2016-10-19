@@ -6,6 +6,17 @@ class FinesController < ApplicationController
   end
 
   def create
+    @fine = Fine.new(fine_params)
+
+    respond_to do |format|
+      if @fine.save
+        format.html { redirect_to root_path(@fine), notice: 'Fine was successfully created.' }
+        format.json { render :show, status: :created, location: @fines }
+      else
+        format.html { render :new }
+        format.json { render json: @fine.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def index
@@ -30,7 +41,7 @@ class FinesController < ApplicationController
   end
 
   def fine_params
-    params.require(:fine).permit(:lastname, :price)
+    params.require(:fine).permit(:last_name,:first_name,:reason,:point,:fine_deadline,:fine_offer,:fine_comment, :price)
   end
 
 end
