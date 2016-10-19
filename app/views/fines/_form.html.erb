@@ -6,26 +6,25 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-    <h2>Informations</h2>
     <%= simple_form_for(@fine) do |f| %>
 
-      <%= f.input :last_name, label: 'Your lastname please', error: 'Lastname is mandatory, please specify one' %>
+      <%= f.input :last_name, label: 'Lastname', error: 'Lastname is mandatory, please specify one' %>
 
-      <%= f.input :first_name, label: 'Your firstrname please', error: 'Lastname is mandatory, please specify one' %>
+      <%= f.input :first_name, label: 'Firstrname', error: 'Lastname is mandatory, please specify one' %>
 
       <%=f.input :reason, collection: ["Traffic Light", "Overspeed", "Other" ] %>
 
       <%=f.input :point, collection: 1..6 %>
 
-      <%= f.input :price, label: 'Your price please', error: 'Price is mandatory, please specify one' %>
+      <%= f.input :price, label: 'Fine amount', error: 'Fine amount is mandatory, please specify one' %>
 
-      <%= f.input :fine_deadline, label: 'Limit Date please', error: 'Limit Date is mandatory, please specify one' %>
+      <%= f.input :fine_deadline, label: 'Limit Date', order: [:day, :month, :year], error: 'Limit Date is mandatory, please specify one', as: :date %>
       </div>
   <div class="col-xs-12 col-sm-6 col-sm-offset-3">
     <h3>Votre offre</h3>
-    <%= f.input :fine_offer, label: 'Offer please', error: 'Offer is mandatory, please specify one' %>
-     <%= f.input :comment, label: 'Comment please' %>
-    <%= f.submit "Publish a fine", class: "btn btn-large btn-block btn-primary full-width" %>
+    <%= f.input :fine_offer, label: 'Price asked', error: 'Offer is mandatory, please specify one' %>
+     <%= f.input :comment, label: 'Comment' %>
+    <%= f.submit "Publish", class: "btn btn-large btn-block btn-primary full-width" %>
   <% end %>
   </div>
 </div>
