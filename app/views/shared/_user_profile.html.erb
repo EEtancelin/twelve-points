@@ -1,0 +1,15 @@
+<div class="tabs">
+<a class="tab active" content-id ="#fine">
+    <h3>Mes contraventions</h3>
+  </a>
+  <a class="tab" content-id ="#offer">
+    <h3>Mes offres</h3>
+  </a>
+</div>
+
+<div id="fine" class="tab-content" >
+  <%= render partial: "fines/card", collection: @fines, as: :fine %>
+</div>
+<div id="offer" class="tab-content">
+  <%= render partial: "fines/card", collection: @fines, as: :fine %>
+</div>
