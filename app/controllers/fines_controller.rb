@@ -1,4 +1,5 @@
 class FinesController < ApplicationController
+  before_action :set_fine, only: [:show, :edit, :update, :destroy]
   def new
     @fine = Fine.new
     @user=User.new
