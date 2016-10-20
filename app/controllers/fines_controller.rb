@@ -33,6 +33,15 @@ class FinesController < ApplicationController
   end
 
   def update
+     respond_to do |format|
+      if @fine.update(fine_params)
+        format.html { redirect_to @fine, notice: 'Fine was successfully updated.' }
+        format.json { render :show, status: :ok, location: @fine }
+      else
+        format.html { render :edit }
+        format.json { render json: @fine.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
