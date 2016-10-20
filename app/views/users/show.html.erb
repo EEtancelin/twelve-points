@@ -9,11 +9,14 @@
 
 <div id="fine" class="tab-content" >
   <div class="owl-carousel">
-  <%= render partial: "fines/card", collection: @fines, as: :fine %>
+    <%= render partial: "fines/card", collection: @fines, as: :fine %>
   </div>
 </div>
+
 <div id="offer" class="tab-content">
-  <%#= render partial: "offers/card", collection: @offers, as: :offer %>
+  <div class="own-carousel">
+    <%= render partial: "offers/card", collection: @offers, as: :offer %>
+  </div>
 </div>
 
 <p>offer <%= @offers.length%></p>
