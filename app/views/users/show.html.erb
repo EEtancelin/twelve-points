@@ -2,7 +2,8 @@
 <%= @user.last_name %>
 </div>
 
-<img src="http://placehold.it/30x30" class="avatar-large img-responsive center-block" alt="Avatar">
+<% avatar_url = current_user.facebook_picture_url || (current_user.photo && current_user.photo.path) || "http://placehold.it/30x30" %>
+<img src='<%= avatar_url %>' class="avatar-large img-responsive center-block" alt="Avatar">
 
 
 <div class="tabs">
