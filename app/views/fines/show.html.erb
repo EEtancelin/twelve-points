@@ -21,6 +21,9 @@
   <li><%="@fine.fine_offer: "%><%=@fine.fine_offer%> </li>
 </ul>
 
+  <%@fine.offers.each do |offer|%>
+    offer : id <%= offer.id%>
+  <%end%>
 <%= render partial: "fines/card", object: @fine, as: :fine %>
 
 

@@ -9,13 +9,15 @@ class OffersController < ApplicationController
   end
 
   def create
-    @fine = Fine.find(params[:fine_id])
-    Fine.create!(offers_params)
+    @new_offer = Offer.new(offer_params)
+    @fine = Fine.find (params[:fine_id])
+    @new_offer.fine = @fine
+    @new_offer.save
     redirect_to fine_path(@fine)
   end
 
-  def offers_params
-    params.require(:offer).permit(:user_id, :comment)
+  def offer_params
+    params.require(:offer).permit(:fine_id,:user_id, :comment)
   end
 
 end
