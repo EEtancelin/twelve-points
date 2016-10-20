@@ -12,16 +12,13 @@ class FinesController < ApplicationController
   end
 
   def show
+    @new_offer = Offer.new
   end
 
   def edit
   end
 
   def update
-    binding.pry
-    redirect_to fine_path(@fine)
-
-    puts "dfdfdsfsdfsdf"
   end
 
   def destroy
