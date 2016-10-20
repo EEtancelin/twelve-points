@@ -18,6 +18,7 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'owlcarousel-rails'
+gem 'figaro'
 
 group :development, :test do
   gem 'binding_of_caller'
