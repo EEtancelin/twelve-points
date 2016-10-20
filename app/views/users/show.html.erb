@@ -12,8 +12,8 @@
   <%= render partial: "fines/card", collection: @fines, as: :fine %>
   </div>
 </div>
-<div id="offer" class="tab-content">
-  <%#= render partial: "offers/card", collection: @offers, as: :offer %>
+<div id="offer" class="tab-content flex-vertical-center">
+  <%= render partial: "offers/card", collection: @offers, as: :offer %>
 </div>
 
 <p>offer <%= @offers.length%></p>
