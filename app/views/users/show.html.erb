@@ -1,3 +1,10 @@
+<div class="class text-center">
+<%= @user.last_name %>
+</div>
+
+<img src="<%= cl_image_path(@user.photo, height: 10, width: 10, crop: :fill) %>" class="avatar-large img-responsive center-block" alt="Avatar">
+
+
 <div class="tabs">
 <a class="tab active" content-id ="#fine">
     <h3>Mes contraventions</h3>
@@ -21,3 +28,4 @@
 
 <p>offer <%= @offers.length%></p>
 <p>fine <%= @fines.length%></p>
+<%= link_to t(".top_call_to_action", default: 'Modifiez votre profil'), edit_user_registration_path(@user), class: "navbar-wagon-item navbar-wagon-button btn" %>

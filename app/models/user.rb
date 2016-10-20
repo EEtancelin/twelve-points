@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :offers, dependent: :destroy
   has_many :fines, dependent: :destroy
 
+  mount_uploader :photo, PhotoUploader
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.to_h.slice(:provider, :uid)
@@ -26,4 +27,5 @@ class User < ApplicationRecord
 
     return user
   end
+
 end
