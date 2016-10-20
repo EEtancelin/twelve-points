@@ -42,9 +42,16 @@
         <h5>Prime d'honnêteté: <%=@fine.fine_offer%> €</h5>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Oui Oui c'était bien moi :-)
-        </button>
+        <%= simple_form_for(@new_offer, url: new_fine_offer_path(fine_id: @fine.id)) do |f| %>
+        <div class="form-inputs">
+          <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit , "Oui Oui c'était bien moi :-)", class: "btn btn-large btn-block btn-primary full-width" %>
+        </div>
+       <% end %>
+
       </div>
     </div>
   </div>

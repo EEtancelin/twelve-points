@@ -27,6 +27,7 @@ class FinesController < ApplicationController
   end
 
   def show
+    @new_offer = Offer.new
   end
 
   def edit
