@@ -11,15 +11,3 @@ class Fine < ApplicationRecord
   validates :fine_offer, presence: true
 
 end
-
-
-
-
-
-
-
-
-
-
-
-
