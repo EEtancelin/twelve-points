@@ -1,5 +1,12 @@
 <h1>Fines#show</h1>
 <ul>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#offerModal">
+  Je crois bien que c'est moi
+</button>
+
+
   <li><%="@fine.id: "%><%=@fine.id%> </li>
   <li><%="@fine.fine_date: "%><%=@fine.fine_date%> </li>
   <li><%="@fine.fine_deadline: "%><%=@fine.fine_deadline%> </li>
@@ -17,3 +24,30 @@
 <%= render partial: "fines/card", object: @fine, as: :fine %>
 
 
+
+<!-- Modal -->
+<div class="modal fade" id="offerModal" tabindex="-1" role="dialog" aria-labelledby="offerModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="offerModalLabel"><%=@fine.reason%></h4>
+      </div>
+      <div class="modal-body">
+        <h4> <%=@fine.point%> point(s)</h4>
+        <h5>Le : <%=@fine.fine_date%> </h5>
+        <h5>Amende : <%=@fine.price%> € </h5>
+        <h5>Prime d'honnêteté: <%=@fine.fine_offer%> €</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Oui Oui c'était bien moi :-)
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <%= link_to t(".top_call_to_action", default: 'Modifiez cette amende'), edit_fine_path(@fine), class: "navbar-wagon-item navbar-wagon-button btn" %>
