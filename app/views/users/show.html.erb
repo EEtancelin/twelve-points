@@ -1,8 +1,8 @@
 <div class="class text-center">
 <%= @user.last_name %>
 </div>
-
-<img src="<%= cl_image_path(@user.photo, height: 10, width: 10, crop: :fill) %>" class="avatar-large img-responsive center-block" alt="Avatar">
+<% avatar_url = current_user.facebook_picture_url || current_user.photo || "http://placehold.it/30x30" %>
+<img src="avatar_url" class="avatar-large img-responsive center-block" alt="Avatar">
 
 
 <div class="tabs">
@@ -19,16 +19,10 @@
     <%= render partial: "fines/card", collection: @fines, as: :fine %>
   </div>
 </div>
-<<<<<<< HEAD
+
 <div id="offer" class="tab-content flex-vertical-center">
   <%= render partial: "offers/card", collection: @offers, as: :offer %>
-=======
 
-<div id="offer" class="tab-content">
-  <div class="own-carousel">
-    <%= render partial: "offers/card", collection: @offers, as: :offer %>
-  </div>
->>>>>>> f7f6daf2cf896a59292588c286335630cb2d03ec
 </div>
 
 <p>offer <%= @offers.length%></p>

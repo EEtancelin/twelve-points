@@ -1,53 +1,6 @@
-<<<<<<< HEAD
+
 <div class="card card-block">
   <h4 class="card-title"><%=offer.fine.reason%></h4>
   <p class="card-text"> Amende : <%=offer.fine.price%></p>
   <p class="card-text"> Point(s) perdus(s) : <%=offer.fine.point%></p>
   <p class="card-text"> Prime d'honéteté : <%=offer.fine.fine_offer%> €</p>
-=======
-<div class="all-cards">
-  <div class="container">
-      <div class="row col-xs-12 col-sm-6 col-sm-offset-3">
-        <aside class="profile-card redirect-to" href='<%=fine_path(fine)%>'>
-
-          <header>
-
-            <!-- here’s the avatar -->
-            <a target="_blank" href="<%=fine_path(fine)%>">
-              <img src="https://www.dropbox.com/s/9upq789hxnhs361/ava.gif?raw=1">
-            </a>
-
-            <h1><%=fine.reason%></h1>
-            <h2><%=fine.fine_offer%>€</h2>
-
-          </header>
-
-          <!-- bit of a bio; who are you? -->
-          <div class="profile-bio">
-          <p> J'ai une amende de <b><%=fine.price%>€</b> avec <b><%=fine.point%>
-            <% if fine.point == 1%>
-              <%= "point" %>
-              <% else%>
-              <%= "points" %>
-              <% end %>
-            </b>. Aidez moi avant le <%=fine.fine_deadline.to_formatted_s(:short) %> </p>
-          </div>
-
-          <!-- some social links to show off -->
-          <ul class="profile-social-links">
-
-          <li>
-            <a target="_blank" href="#">
-              <i class="profile-card redirect-to" href='<%=fine_path(fine)%>'></i>
-            </a>
-          </li>
-
-            <!-- add or remove social profiles as you see fit -->
-
-          </ul>
-
-        </aside>
-      </div>
-    </div>
->>>>>>> f7f6daf2cf896a59292588c286335630cb2d03ec
-</div>
