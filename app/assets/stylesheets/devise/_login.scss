@@ -7,8 +7,9 @@
   font-size: 12px;
   text-transform: uppercase;
   background-color: #49639F;
-  position: center;
-  display: inline-block;
+  display: block;
+  margin-top: 10px;
+  text-align: center;
 }
 
 
@@ -23,5 +24,5 @@
 
 
 .container_login {
-  padding: 10px
+  padding: 10px;
 }
