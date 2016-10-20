@@ -32,6 +32,8 @@
       </div>
   </section>
 
-  <%= render partial: "fines/card", collection: @fines, as: :fine %>
+  <div class="owl-carousel">
+    <%= render partial: "fines/card", collection: @fines, as: :fine %>
+  </div>
 
 </div>
