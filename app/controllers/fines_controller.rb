@@ -18,6 +18,10 @@ class FinesController < ApplicationController
   end
 
   def update
+    binding.pry
+    redirect_to fine_path(@fine)
+
+    puts "dfdfdsfsdfsdf"
   end
 
   def destroy

@@ -42,6 +42,18 @@
         <h5>Prime d'honnêteté: <%=@fine.fine_offer%> €</h5>
       </div>
       <div class="modal-footer">
+        <%= simple_form_for(@fine, url: fine_path(@fine)) do |f| %>
+        <div class="form-inputs">
+
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit , "Log in", class: "btn btn-large btn-block btn-primary full-width" %>
+        </div>
+       <% end %>
+
+
+
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
           Oui Oui c'était bien moi :-)
         </button>
