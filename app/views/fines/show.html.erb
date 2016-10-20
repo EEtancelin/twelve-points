@@ -1,25 +1,7 @@
-<h1>Fines#show</h1>
-<ul>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#offerModal">
-  Je crois bien que c'est moi
-</button>
-
-
-  <li><%="@fine.id: "%><%=@fine.id%> </li>
-  <li><%="@fine.fine_date: "%><%=@fine.fine_date%> </li>
-  <li><%="@fine.fine_deadline: "%><%=@fine.fine_deadline%> </li>
-  <li><%="@fine.point: "%><%=@fine.point%> </li>
-  <li><%="@fine.price: "%><%=@fine.price%> </li>
-  <li><%="@fine.reason: "%><%=@fine.reason%> </li>
-  <li><%="@fine.comment: "%><%=@fine.comment%> </li>
-  <li><%="@fine.user_id: "%><%=@fine.user_id%> </li>
-  <li><%="@fine.updated_at: "%><%=@fine.updated_at%> </li>
-  <li><%="@fine.last_name: "%><%=@fine.last_name%> </li>
-  <li><%="@fine.first_name: "%><%=@fine.first_name%> </li>
-  <li><%="@fine.fine_offer: "%><%=@fine.fine_offer%> </li>
-</ul>
+<div class="info_fine">
+  <h2>Le petit mot de <%=@fine.first_name%> <%=@fine.last_name%></h2>
+  <p><%=@fine.fine_offer%></p>
+</div>
 
   <%@fine.offers.each do |offer|%>
     offer : id <%= offer.id%>
@@ -54,10 +36,32 @@
           <%= f.button :submit , "Oui Oui c'était bien moi :-)", class: "btn btn-large btn-block btn-primary full-width" %>
         </div>
        <% end %>
-
       </div>
     </div>
   </div>
 </div>
 
- <%= link_to t(".top_call_to_action", default: 'Modifiez cette amende'), edit_fine_path(@fine), class: "navbar-wagon-item navbar-wagon-button btn" %>
+
+  <div class="container">
+    <div class="info_button text-center">
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#offerModal">
+        Accepter l'offre !
+      </button>
+    </div>
+  </div>
+
+   <div class="container">
+      <div class="info_button text-center">
+       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#offerModal">
+         Envoyer un message
+       </button>
+     </div>
+   </div>
+
+<div>
+  <p><%= link_to "Back", :back %></p>
+</div>
+
+ <div>
+  <%= link_to t(".top_call_to_action", default: 'Modifiez cette amende'), edit_fine_path(@fine), class: "navbar-wagon-item navbar-wagon-button btn" %>
+ </div>

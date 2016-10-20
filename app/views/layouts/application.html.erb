@@ -15,7 +15,9 @@
 
 
     <%= yield %>
-    <%= render 'shared/footer' %>
+      <div class="container-brand-dark footer-surround footer-container">
+      <%= render 'shared/footer' %>
+      </div>
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
