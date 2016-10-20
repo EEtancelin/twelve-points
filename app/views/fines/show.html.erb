@@ -44,18 +44,14 @@
       <div class="modal-footer">
         <%= simple_form_for(@new_offer, url: new_fine_offer_path(fine_id: @fine.id)) do |f| %>
         <div class="form-inputs">
-          Current user : <%=current_user.id%>
           <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit , "Log in", class: "btn btn-large btn-block btn-primary full-width" %>
+          <%= f.button :submit , "Oui Oui c'était bien moi :-)", class: "btn btn-large btn-block btn-primary full-width" %>
         </div>
        <% end %>
 
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Oui Oui c'était bien moi :-)
-        </button>
       </div>
     </div>
   </div>
