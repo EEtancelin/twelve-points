@@ -3,9 +3,6 @@
   <p><%=@fine.comment%></p>
 </div>
 
-  <%@fine.offers.each do |offer|%>
-    offer : id <%= offer.id%>
-  <%end%>
 <%= render partial: "fines/card", object: @fine, as: :fine %>
 
 
