@@ -42,7 +42,7 @@
   </div>
 <% end %>
 
-
+<% has_accepted_offer = current_user.offers.map(&:fine_id).include?(@fine.id) %>
 
   <% if @fine.user == current_user %>
    <div class="text-center" style="margin:10px">
@@ -52,7 +52,7 @@
   <% else %>
      <div class="container">
         <div class="info_button text-center" style="margin:10px">
-          <% if user_signed_in? %>
+          <% if user_signed_in? && !has_accepted_offer %>
             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#offerModal">
               Accepter l'offre !
             </button>
