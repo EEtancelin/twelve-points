@@ -1,9 +1,9 @@
 <div class="class text-center">
 <%= @user.last_name %>
 </div>
+<% avatar_url = @user.facebook_picture_url || @user.photo || 'http://placehold.it/30x30' %>
 
-<% avatar_url = @user.facebook_picture_url || (@user.photo && @user.photo) || "http://placehold.it/30x30" %>
-<img src='<%= avatar_url %>' class="avatar-large img-responsive center-block" alt="Avatar">
+<img src="<%= avatar_url %>" class="avatar-large img-responsive center-block" alt="Avatar">
 
 
 <div class="tabs">
