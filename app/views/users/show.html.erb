@@ -1,9 +1,13 @@
-<div class="class text-center">
-<%= @user.last_name %>
+<div class="avatar_url_profil" style="margin:10px">
+  <% avatar_url = @user.facebook_picture_url || @user.photo && @user.photo.url || 'http://placehold.it/30x30' %>
+  <img src="<%= avatar_url %>" class="avatar-large img-responsive center-block" alt="Avatar">
 </div>
-<% avatar_url = @user.facebook_picture_url || @user.photo && @user.photo.url || 'http://placehold.it/30x30' %>
 
-<img src="<%= avatar_url %>" class="avatar-large img-responsive center-block" alt="Avatar">
+<div class="class text-center">
+<h3><%= @user.first_name %> <%= @user.last_name %></h3>
+</div>
+
+
 
 
 <div class="tabs">
@@ -26,6 +30,7 @@
 
 </div>
 
-<p>offer <%= @offers.length%></p>
-<p>fine <%= @fines.length%></p>
-<%= link_to t(".top_call_to_action", default: 'Modifiez votre profil'), edit_user_registration_path(@user), class: "navbar-wagon-item navbar-wagon-button btn" %>
+
+<div class="text-center" style="margin:10px">
+  <%= link_to t(".top_call_to_action", default: 'Modifiez votre profil'), edit_user_registration_path(@user), class: "navbar-wagon-item navbar-wagon-button btn" %>
+</div>
