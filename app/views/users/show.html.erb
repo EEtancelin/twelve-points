@@ -8,29 +8,27 @@
 </div>
 
 
-
-
 <div class="tabs">
-<a class="tab active" content-id ="#fine">
+  <a class="tab active" href="#fine" data-toggle="tab">
     <h3>Mes contraventions</h3>
   </a>
-  <a class="tab" content-id ="#offer">
+  <a class="tab" href="#offer" data-toggle="tab">
     <h3>Mes offres</h3>
   </a>
 </div>
 
-<div id="fine" class="tab-content" >
-  <div class="owl-carousel">
-    <%= render partial: "fines/card", collection: @fines, as: :fine %>
+<div class="tab-content">
+  <div id="fine" class="tab-pane active">
+    <div class="owl-carousel">
+      <%= render partial: "fines/card", collection: @fines, as: :fine %>
+    </div>
+    <div class="text-center" style="margin:10px">
+      <%= link_to t(".top_call_to_action", default: 'Modifiez votre profil'), edit_user_registration_path(@user), class: "navbar-wagon-item navbar-wagon-button btn" %>
+    </div>
+  </div>
+
+  <div id="offer" class="tab-pane flex-vertical-center">
+    <%= render partial: "offers/card", collection: @offers, as: :offer %>
   </div>
 </div>
 
-<div id="offer" class="tab-content flex-vertical-center">
-  <%= render partial: "offers/card", collection: @offers, as: :offer %>
-
-</div>
-
-
-<div class="text-center" style="margin:10px">
-  <%= link_to t(".top_call_to_action", default: 'Modifiez votre profil'), edit_user_registration_path(@user), class: "navbar-wagon-item navbar-wagon-button btn" %>
-</div>
