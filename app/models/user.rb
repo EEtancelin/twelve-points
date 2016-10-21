@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :fines, dependent: :destroy
 
   mount_uploader :photo, PhotoUploader
+  after_create :send_welcome_email
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.to_h.slice(:provider, :uid)
@@ -28,4 +29,7 @@ class User < ApplicationRecord
     return user
   end
 
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
 end
