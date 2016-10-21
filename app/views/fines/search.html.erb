@@ -1,0 +1,7 @@
+<h1>Search</h1>
+<% @fines.each do |fine|%>
+<% if fine.comment==(params[:q])%>
+<%= fine.first_name %>
+<% end%>
+<% end%>
+

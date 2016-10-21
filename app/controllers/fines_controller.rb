@@ -48,6 +48,10 @@ class FinesController < ApplicationController
   def destroy
   end
 
+  def search
+  @fines= Fine.all
+  end
+
   private
 
   def set_fine
