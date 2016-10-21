@@ -1,7 +1,18 @@
-<h1>Search</h1>
+<% result=[] %>
 <% @fines.each do |fine|%>
-<% if fine.comment==(params[:q])%>
-<%= fine.first_name %>
+  <% if fine.point.to_s<=(params[:q]).to_s%>
+    <% result << fine %>
+  <% end%>
 <% end%>
+
+<% if result.size ==0 %>
+  <%= Aucune amende ne correspond à votre demande veuillez changer vos critères %>
+<% else %>
+  <p> <%= result.size %> amendes correspondent à vos critères </p>
+  <div class="owl-carousel">
+    <% result.each do |result|%>
+      <%= render partial: "fines/card", object: result, as: :fine  %>
+    <% end%>
+  </div>
 <% end%>
 
