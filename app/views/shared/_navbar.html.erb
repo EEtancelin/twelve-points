@@ -70,8 +70,4 @@
   </div>
 
 </div>
-<%= form_tag("/search", method: "get") do %>
-            <%= label_tag(:q, "Combien de points avez vous en trop? => ") %>
-            <%= number_field_tag :q, 1, min: 1, max: 6, step: 1 %>
-            <%= submit_tag("Donner mes points") %>
-          <% end %>
+

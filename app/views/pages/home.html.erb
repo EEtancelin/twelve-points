@@ -1,4 +1,8 @@
-
+<%= form_tag("/search", method: "get") do %>
+            <%= label_tag(:q, "Combien de points avez vous en trop? => ") %>
+            <%= number_field_tag :q, 1, min: 1, max: 6, step: 1 %>
+            <%= submit_tag("Donner mes points") %>
+          <% end %>
 <div class="homepage">
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= asset_path('image_banner.jpg') %>);">
     <div class="banner-contents">
