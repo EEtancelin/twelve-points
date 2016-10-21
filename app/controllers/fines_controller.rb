@@ -1,5 +1,5 @@
 class FinesController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required, except: :show
   before_action :set_fine, only: [:show, :edit, :update, :destroy]
   def new
     @fine = Fine.new
