@@ -23,9 +23,12 @@
       <% end %>
 
       <!-- Profile picture and dropdown -->
+
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <% avatar_url = current_user.facebook_picture_url || current_user.photo && current_user.photo.url || 'http://placehold.it/30x30' %>
+
+
 
           <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -65,5 +68,10 @@
       </ul>
     </div>
   </div>
-</div>
 
+</div>
+<%= form_tag("/search", method: "get") do %>
+            <%= label_tag(:q, "Combien de points avez vous en trop? => ") %>
+            <%= number_field_tag :q, 1, min: 1, max: 6, step: 1 %>
+            <%= submit_tag("Donner mes points") %>
+          <% end %>
