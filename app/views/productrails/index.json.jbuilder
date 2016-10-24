@@ -1,0 +1,1 @@
+json.array! @productrails, partial: 'productrails/productrail', as: :productrail

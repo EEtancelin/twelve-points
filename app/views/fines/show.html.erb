@@ -1,3 +1,72 @@
-<h1>Fines#show</h1>
-<p>Find me in app/views/fines/show.html.erb</p>
+<div class="info_fine text-center">
+  <h2>Le petit mot de <%=@fine.first_name%> <%=@fine.last_name%></h2>
+  <p><%=@fine.comment%></p>
+</div>
+
+<%= render partial: "fines/card", object: @fine, as: :fine %>
+
+
+<% if current_user %>
+<!-- Modal -->
+  <div class="modal fade" id="offerModal" tabindex="-1" role="dialog" aria-labelledby="offerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="offerModalLabel"><%=@fine.reason%></h4>
+        </div>
+        <div class="modal-body">
+          <h4> <%=@fine.point%> point(s)</h4>
+          <h5>Le : <%=@fine.fine_date%> </h5>
+          <h5>Amende : <%=@fine.price%> € </h5>
+          <h5>Prime d'honnêteté: <%=@fine.fine_offer%> €</h5>
+        </div>
+        <div class="modal-footer">
+          <%= simple_form_for(@new_offer, url: new_fine_offer_path(fine_id: @fine.id)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit , "Oui Oui c'était bien moi :-)", class: "btn btn-large btn-block btn-primary full-width" %>
+          </div>
+         <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% has_accepted_offer = current_user.offers.map(&:fine_id).include?(@fine.id) %>
+
+  <% if @fine.user == current_user %>
+   <div class="text-center" style="margin:10px">
+    <%= link_to t(".top_call_to_action", default: 'Modifiez cette amende'), edit_fine_path(@fine), class: "navbar-wagon-item navbar-wagon-button btn" %>
+   </div>
+
+  <% else %>
+     <div class="container">
+        <div class="info_button text-center" style="margin:10px">
+          <% if user_signed_in? && !has_accepted_offer %>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#offerModal">
+              Accepter l'offre !
+            </button>
+          <% else %>
+            <%= link_to "Accepter l'offre !", new_user_session_path, class: "btn btn-primary btn-lg" %>
+          <% end %>
+        </div>
+
+        <div class="info_button text-center">
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#offerModal">
+             Envoyer un message
+          </button>
+        </div>
+      </div>
+  <% end %>
+
+<div>
+  <p class="text-center" style="margin:10px"><%= link_to "Back", root_path %></p>
+</div>
 

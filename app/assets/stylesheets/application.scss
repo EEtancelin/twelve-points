@@ -1,3 +1,8 @@
+/*
+ *= require owl.carousel
+ *= require owl.theme
+ */
+
 // Graphical variables
 @import "config/reset";
 @import "config/variables";
@@ -10,14 +15,11 @@
 @import "font-awesome";
 
 // Your CSS
+@import "shared/shared";
 @import "layout/index";
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
 @import "devise/index";
+@import "components/tab";
 
-
-
-.center{
-  margin: auto 0px;
-}
